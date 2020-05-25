@@ -27,9 +27,7 @@ vec2 rotate2D(vec2 _st, float _angle){
 }
 
 float noise(in float x) {
-    float i = floor(x);
-    float f = fract(x);
-    return mix(random(i), random(i + 1.), smoothstep(0., 1., f));
+    return mix(random(floor(x)), random(floor(x) + 1.), smoothstep(0., 1., fract(x)));
 }
 
 void main(void) {
